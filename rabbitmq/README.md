@@ -24,7 +24,7 @@ Também chamado de Consumer
 
 #### app.js
 
-'''
+```
 var amqp = require('amqplib/callback_api')
 
 amqp.connect('amqp://localhost:5672', function (err, conn) {
@@ -39,11 +39,11 @@ amqp.connect('amqp://localhost:5672', function (err, conn) {
       conn.close()
       process.exit(0) }, 500)
 })
-'''
+```
 
 #### worker.js
 
-'''
+```
 var amqp = require('amqplib/callback_api')
 
 amqp.connect('amqp://localhost:5672', function (err, conn) {
@@ -58,4 +58,4 @@ amqp.connect('amqp://localhost:5672', function (err, conn) {
         }, { noAck: true })
     })
 })
-'''
+```
