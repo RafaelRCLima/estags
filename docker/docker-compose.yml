@@ -18,7 +18,7 @@ services:
     memswap_limit: 128MB
     mem_reservation: 128MB
     privileged: true
-    restart: always
+    restart: on-failure
 
   MongoDB:
     image: mongo:3.6-jessie
@@ -32,7 +32,7 @@ services:
     memswap_limit: 2GB
     mem_reservation: 2GB
     privileged: true
-    restart: always
+    restart: on-failure
 
   rabbit:
     image: "rabbitmq:3.6-management"
@@ -54,7 +54,7 @@ services:
     memswap_limit: 300MB
     mem_reservation: 300MB
     privileged: true
-    restart: always
+    restart: on-failure
 
   elasticSearch_1:
     image: blacktop/elasticsearch:7.7
@@ -92,7 +92,7 @@ services:
     # cpu_quota: 50000
     # cpuset: 0,1
     privileged: true
-    restart: always
+    restart: on-failure
 
   redis:
     image: redis
@@ -105,7 +105,7 @@ services:
     memswap_limit: 128MB
     mem_reservation: 128MB
     privileged: true
-    restart: always
+    restart: on-failure
 
 networks:
   postgres:
