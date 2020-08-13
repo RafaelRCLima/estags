@@ -8,7 +8,7 @@ const mongooseOptions = {
 }
 
 Mongoose.connect(
-  'mongodb://mongo:27017/sample_mflix', 
+  'mongodb://localhost:27017/sample_mflix', 
   mongooseOptions
 )
 .then(() => console.log('MongoDB Connected'))
