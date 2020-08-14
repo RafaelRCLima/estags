@@ -21,6 +21,18 @@ Utilizando project com mongoose é possível retornar somente os nomes com o tre
 banco.aggregation([{$project: { "nome": 1 }}])
 ```
 
+O resultado dessa query fica:
+
+```
+[
+  {"id": 1, "nome": "Jorge"},
+  {"id": 2, "nome": "Tania"},
+  {"id": 3, "nome": "Augusto"},
+  {"id": 4, "nome": "Katia"},
+  {"id": 5, "nome": "Betania"}
+]
+```
+
 ### Match
 
 ### Group
