@@ -17,4 +17,16 @@ router.get('/project', async (req, res) => {
   res.json(project)
 })
 
+router.get('/match', async (req, res) => {
+  const match = await movie.aggregate([{ $match: { "year": 1992 } },
+  { $project: { "title": 1, "year": 1 } },
+  { $limit: 5 }
+])
+  res.json(match)
+})
+
+router.get('/sort', async (req, res) => {
+  req.json({ sort: true })
+})
+
 module.exports = router
