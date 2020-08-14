@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/project', async (req, res) => {
-  const project = await movie.aggregate([{ $project: { "plot": 2 } }]).limit(10)
+  const project = await movie.aggregate([{ $project: { "plot": 1 } }]).limit(10)
   res.json(project)
 })
 
