@@ -18,4 +18,5 @@ async function buscar () {
   console.log(body.hits.hits)
 }
 
+
 buscar().catch(console.log)
