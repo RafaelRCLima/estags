@@ -16,3 +16,5 @@ Armazenagem fica em forma de documentos
 Disponibiliza os dados em forma de JSON
 
 A forma que armazena os dados se divide em Cluster, Nodes, Indexes, Documents
+
+Mapeamento através de API Rest, diferente do tradicional SQL.
