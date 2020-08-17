@@ -77,8 +77,8 @@ services:
     # cap_add:
     #   - IPC_LOCK
     ports:
-      - "9201:9200"
-      - "9301:9300"
+      - "9200:9200"
+      - "9300:9300"
 
     volumes:
       - /srv/docker/elasticsearch/docker/elasticsearch_1:/var/lib/elasticsearch
