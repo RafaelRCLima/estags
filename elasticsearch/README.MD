@@ -5,6 +5,7 @@ O que é Apache Lucene?
 Apache Lucene é uma engine de busca full-text conhecida pela sua velocidade no momento de indexação.
 
 O ElasticSearch abstrai a API do Lucene para fazer pesquisas full-text.
+Seu grande diferencial é sua velocidade de execução.
 
 Funcionalidades
 
@@ -25,10 +26,10 @@ Mapeamento através de API Rest, diferente do tradicional SQL.
 
 A biblioteca oficial do Elastic é @elastic/elasticsearch'
 Após adicionada ao projeto a configuração básica para utilização é:
-
+```
 const { Client } = require('@elastic/elasticsearch')
 const client = new Client({ node: 'http://localhost:porta' })
-
+```
 ### Índice
 
 Conjunto de documentos que estão relacionados entre si.
@@ -45,4 +46,3 @@ await client.index({
 }
 ```
 
-I
