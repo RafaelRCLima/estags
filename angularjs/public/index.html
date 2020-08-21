@@ -6,6 +6,7 @@
         <title>Estagiários de NodeJS</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/efeitos.css">
         <script src="js/lib/angular.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
@@ -17,10 +18,20 @@
             <div class="jumbotron">
                 <h1 class="text-center">Estagiários de NodeJS</h1>
             </div>
-            
-            <meu-painel ng-repeat="foto in fotos" titulo="{{foto.titulo}}">
-                <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-            </meu-painel>
-        </div> <!-- fim container -->        
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <input ng-model="filtro" ng-model-options="{debounce:500}" class="form-control" placeholder="filtrar">
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro" titulo="{{foto.titulo}}">
+                    <img class="img-responsive center-block" src="{{ foto.url }}" alt="{{foto.titulo}}">
+                </meu-painel>
+            </div>
+        </div>
     </body>
 </html>

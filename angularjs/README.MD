@@ -14,4 +14,5 @@ Podem ser criadas como Tags em formato de Compontentes
 - Angular Expression
 
 Lacunas para apresentar dados do backend.
+Uma AE é somente leitura.
 
