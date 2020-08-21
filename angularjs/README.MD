@@ -9,6 +9,8 @@ Permite um controle específico em páginas HTML para executar ações dinâmica
 
 São responsáveis por indicar pontos de controle que o Angular deve ser executado, como no caso de um controller ser responsável por administrar um trecho.
 
+Podem ser criadas como Tags em formato de Compontentes
+
 - Angular Expression
 
 Lacunas para apresentar dados do backend.
