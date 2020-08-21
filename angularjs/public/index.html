@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="node_estags">
+<html lang="pt-br" ng-app="alurapic">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <title>Estagiários de Node</title>
+        <title>Estagiários de NodeJS</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <script src="js/lib/angular.min.js"></script>
@@ -12,8 +12,17 @@
     </head>
     <body ng-controller="FotosController">
         <div class="container">
-            <h1 class="text-center">Estagiários de Node</h1>
-            <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-        </div>       
+            <div class="jumbotron">
+                <h1 class="text-center">Estagiários de NodeJS</h1>
+            </div>
+            <div ng-repeat="foto in fotos" class="panel panel-default">
+                <div class="panel panel-heading">
+                    <h3>{{foto.titulo}}</h3>
+                </div>
+                <div class="panel-body">
+                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+                </div>
+            </div>
+        </div> <!-- fim container -->        
     </body>
 </html>

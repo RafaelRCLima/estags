@@ -1,1 +1,1 @@
-angular.module('node_estags', [])
+angular.module('alurapic', [])
