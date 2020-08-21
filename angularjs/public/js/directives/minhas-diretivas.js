@@ -8,14 +8,7 @@ angular.module('minhasDiretivas', [])
 
   ddo.transclude = true
 
-  ddo.template = 
-      '<div class="panel panel-default">'
-    + ' <div class="panel-heading">'
-    + '   <h3 class="panel-title text-center">{{titulo}}</h3>'
-    + ' </div>'
-    + ' <div class="panel-body" ng-transclude>'
-    + ' </div>'
-    + '</div>'
+  ddo.templateUrl = 'js/directives/meu-painel.html'
 
   ddo.restric = "AE"
   return ddo
