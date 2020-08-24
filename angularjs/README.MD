@@ -16,3 +16,8 @@ Podem ser criadas como Tags em formato de Compontentes
 Lacunas para apresentar dados do backend.
 Uma AE é somente leitura.
 
+- Single page application
+
+O Angular permite que a aplicação contenha somente uma página carregada que atualiza seus conteúdos através de requisições ajax.
+Para isso é utilizado o modulo ngRoute.
+
