@@ -1,8 +1,18 @@
 import mongoose from 'mongoose'
+import mongoosastic from 'mongoosastic'
 const Schema = mongoose.Schema
 
 let cardSchema = new Schema({
-    card: Object
+    name: { type: String, es_indexed: true },
+    type: { type: String, es_indexed: true },
+    desc: String,
+    atk: { type: String, es_indexed: true },
+    def: { type: String, es_indexed: true },
+    level: { type: String, es_indexed: true },
+    race: String,
+    attribute: String,
+    archetype: String,
+    imageUrl: String
 },{ 
   timestamps: true 
 })
@@ -15,5 +25,10 @@ cardSchema.method('toClient', function () {
 
 
 mongoose.model('Card', cardSchema)
+cardSchema.plugin(mongoosastic, {
+  hosts: [
+    'localhost:9200'
+  ]
+})
 
 export default mongoose.model('Card')
