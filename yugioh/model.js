@@ -1,5 +1,7 @@
 import mongoose from 'mongoose'
 import mongoosastic from 'mongoosastic'
+import elasticClient from './config/elasticsearch'
+
 const Schema = mongoose.Schema
 
 let cardSchema = new Schema({
@@ -25,10 +27,6 @@ cardSchema.method('toClient', function () {
 
 
 mongoose.model('Card', cardSchema)
-cardSchema.plugin(mongoosastic, {
-  hosts: [
-    'localhost:9200'
-  ]
-})
+cardSchema.plugin(mongoosastic, { elasticClient })
 
 export default mongoose.model('Card')

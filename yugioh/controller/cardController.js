@@ -1,5 +1,6 @@
 import Card from '../model'
 import bent from 'bent'
+
 import elasticClient from '../config/elasticsearch'
 
 let cardController = {
@@ -26,18 +27,21 @@ let cardController = {
     const allCards = await Card.find()
 
     await allCards.forEach(function (card) {
-      if (deck.length < 31 && card.race === 'Dragon') deck.push(card)
-      if (deck.length < 36 && card.type === 'Spell Card') deck.push(card)
-      if (deck.length < 41 && card.type === 'Trap Card') deck.push(card)
+      if (deck.length < 31 && card.race === 'Dragon') {
+        deck.push(card)
+      } else {
+        if (deck.length < 36 && deck.length > 30 && card.type === 'Spell Card') deck.push(card)
+        if (deck.length < 41 && deck.length > 40 && card.type === 'Trap Card') deck.push(card)
+      }
     })
 
     await deck.forEach(async function (card){
       await elasticClient.index({
-        index: 'dragons-deck',
+        index: 'dragons-deck-three',
         body: {
           name: card.name,
           type: card.type,
-          desc: 'my deck of dragons'
+          desc: 'my deck of dragons 3'
         }
       })
     })
