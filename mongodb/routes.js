@@ -27,10 +27,10 @@ router.get('/match', async (req, res) => {
 
 router.get('/sort', async (req, res) => {
   const sort = await movie.aggregate([{ $match: { "type": "movie" }},
-  { $project: { "title": 1, "year": 1, "type": 1 } },
-  { $limit: 10 },
-  { $sort: { "year": 1 }}
-])
+    { $project: { "title": 1, "year": 1, "type": 1 } },
+    { $limit: 10 },
+    { $sort: { "year": 1 }}
+  ])
   res.json(sort)
 })
 

@@ -14,6 +14,6 @@ router.get('/read', cardController.read)
 router.post('/loadData', cardController.loadData)
 
 router.get('/createDeck', cardController.createDeck)
-router.get('/elasticTest', cardController.elasticTest)
+router.get('/search', cardController.elasticTest)
 
 export default router
