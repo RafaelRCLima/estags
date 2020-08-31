@@ -1,0 +1,16 @@
+{
+  "name": "subscriptions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha"
+  },
+  "devDependencies": {
+    "mocha": "^8.1.2",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "underscore": "^1.10.2"
+  }
+}
