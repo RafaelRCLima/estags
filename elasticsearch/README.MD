@@ -109,7 +109,7 @@ POST catalogo/_update/1
 
 Devem ser passados o índice no comando, e nos argumentos o nome do documento , o campo a ser alterado e o novo valor.
 
-## Formato GET
+### Formato GET
 
 GET catalogo/_count
 
@@ -126,7 +126,7 @@ Lembra query params
 
 Este tipo de pesquisa é mais avançada porque não é necessário indicar em qual campo deve ser buscada a palavra "futebol", já que o ElasticSearch busca em todo o índice por matches.
 
-## CONCEITOS
+### CONCEITOS
 
 Para associar com bd relacionais
 Post => insert
@@ -134,7 +134,7 @@ Get => select
 Put => update
 Delete => delete
 
-## HTTP HEAD
+### HTTP HEAD
 
 Se um documento existe retorna verdadeiro, caso não, falso, mas em formato http, ou seja, 200 para true e 404 para false.
 
@@ -153,7 +153,7 @@ PUT catalogo/_doc/50
 
 A cada inserção o campo "version" é atualizado representando quantas vezes foi atualizado, isso porque os documentos são imutáveis, sendo alteradas então somente as versões atuais de cada um deles como novos documentos.
 
-## DELETE
+### DELETE
 
 DELETE catalogo/_doc/50
 
@@ -167,7 +167,7 @@ Quanto mais shards maior desempenho de escrita e menor em leitura.
 O ideal é que cada shard tenha menos de 50GB.
 
 
-## BUSCA LIVRE
+### BUSCA LIVRE
 
 O Elastic cria um campo chamado "_all"
 Útil quando não se sabe qual o campo possui o dado desejado.
@@ -186,47 +186,47 @@ João da Silva 27 Brasil
 
 Por isso o ElasticSearch consegue fazer a busca sem a necessidade de se especificar o campo desejado.
 
-## BUSCA ESPECÍFICA
+### BUSCA ESPECÍFICA
 
 GET catalogo/_search/?q=pais:Brasil
 Pesquisa do valor 'Brasil' no campo 'pais'.
 
-## CABEÇALHO
+### CABEÇALHO
 
 took => quantidade de milisegundos utilizados para finalizar a requisição
 timed_out => determina se a busca falhou por tempo limite com valor booleano
 shards => contém atributos para indicar em quantos shards foram encontrados dados, quantos tiveram sucesso na busca, quantos pularam e quantos falharam.
 hits => resultado da busca em sim, a primeira parte apresenta quantos itens foram encontrados e a segunda os itens em si. O max_score apresenta valores de 0 a 1 de acordo com a relevancia analisada em relação ao conteúdo.
 
-## PAGINAÇÃO
+### PAGINAÇÃO
 
 GET catalogo/_search/?q=futebol&size=10&from=30
 
 size = qtde de documentos a serem exibidos
 from = qtde de docs a ser pulados para começar a buscar dados, comportamento igual ao skip de mongo (para não pular deve ser colocado 0).
 
-## MAPEAMENTO (Mapping)
+### MAPEAMENTO (Mapping)
 
 Uma forma de criar 'tabelas' se comparando com bd's relacionais
 Quando não informado, o ElasticSearch se utiliza da inferência para automaticamente o tipo de dado a partir do documento.
 
 Para descobrir como este mapeamento está sendo feito:
 
-## GET catalogo/_mapping
+### GET catalogo/_mapping
 
 Consegue mapear os tipos de dados dos atributos
 
 --------(IMAGEM AQUI)----------
 
-## SCORE
+### SCORE
 Valores de 0 a 1 que indicam o nível de relevancia de um documento para uma pesquisa.
 
-## ÍNDICE INVERTIDO
+### ÍNDICE INVERTIDO
 Armazena palavras como "Tokens" as associando com os seus respectivos arquivos json onde podem ser encontradas.
 
 Para encontrar esses tokens o ElasticSearch usa analisadores.
 
-## ANALISADORES COMUNS
+### ANALISADORES COMUNS
 
 Espaço em branco: Cada espaço em branco é utilizado para quebrar as palavras, mas leva junto pontuação
 
@@ -286,7 +286,7 @@ PUT catalogo_V2
 
 Com isso ao executar uma busca com palavras com ou sem acento, maiúsculas ou minúsculas, plural ou singular o resultado será apresentado.
 
-## ANALIZERS COM SINÔNIMOS
+### ANALIZERS COM SINÔNIMOS
 
 Configuração padrão do analizer "portuguese"
 
