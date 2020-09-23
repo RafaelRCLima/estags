@@ -75,6 +75,15 @@ Master Nodes garantem a integridade do Cluster, distribuição dos shards, entre
 
 Mais baixo nível da estrutura de dados do Elasticsearch.
 
+"Pedaços" do índice
+
+Um índice pode ser "quebrado" em partes onde cada uma delas é um Shard
+Isso lembra Bancos Relacionais Distribuídos, em um caso onde os dados não são replicados
+
+Quanto mais shards maior desempenho de escrita e menor em leitura.
+O ideal é que cada shard tenha menos de 50GB.
+
+
 ### Replica
 
 Replica os dados de um Nó e seus Shards. Serve para proporcionar opções de busca adicionais para o caso de uma instância estar sobrecarregada.
@@ -156,16 +165,6 @@ A cada inserção o campo "version" é atualizado representando quantas vezes fo
 ### DELETE
 
 DELETE catalogo/_doc/50
-
------SHARDS-----
-"Pedaços" do índice
-
-Um índice pode ser "quebrado" em partes onde cada uma delas é um Shard
-Isso lembra Bancos Relacionais Distribuídos, em um caso onde os dados não são replicados
-
-Quanto mais shards maior desempenho de escrita e menor em leitura.
-O ideal é que cada shard tenha menos de 50GB.
-
 
 ### BUSCA LIVRE
 
